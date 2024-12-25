@@ -15,6 +15,16 @@ namespace TrumpfMetamation_Task1
             //ApplicationConfiguration.Initialize();
             //Application.Run(new Form1());
             System.Diagnostics.Process.Start("explorer.exe", @"C:");
+
+            System.Threading.Thread.Sleep(5000); // Wait for File Explorer to open
+
+
+            SendKeys.SendWait("^+n");
+            Thread.Sleep(500);
+            // Type the new folder name and press Enter
+            SendKeys.SendWait("Trumpf Metamation");
+            SendKeys.SendWait("{ENTER}");
+            SendKeys.SendWait("{ENTER}");
         }
     }
 }
