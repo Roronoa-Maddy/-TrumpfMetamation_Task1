@@ -45,13 +45,13 @@ namespace TrumpfMetamation_Task1
 
             //Entering  text in the text file saving The File
             SendKeys.SendWait("Welcome To Trumpf Metamation");
-            Thread.Sleep(1000); 
-            SendKeys.SendWait("^s"); 
-                                     
+            Thread.Sleep(1000);
+            SendKeys.SendWait("^s");
+
             Thread.Sleep(1000);
             SendKeys.SendWait("%{F4}");
 
-            string filePath = @"D:\Trumpf Metamation\MetaMation.txt";
+            string filePath = @"C:\Trumpf Metamation\MetaMation.txt";
             string expectedContent = "Welcome To Trumpf Metamation";
 
             string actualContent = File.ReadAllText(filePath);
@@ -64,6 +64,13 @@ namespace TrumpfMetamation_Task1
             {
                 Console.WriteLine("Validation failed: The text content is incorrect.");
             }
+
+            //Deleting the Respective File
+            SendKeys.SendWait("+{F10}");
+            Thread.Sleep(1000);
+            SendKeys.SendWait("D");
+            Thread.Sleep(500);
+            SendKeys.SendWait("{ENTER}");
 
         }
     }
