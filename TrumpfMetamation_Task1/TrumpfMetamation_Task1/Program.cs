@@ -51,7 +51,19 @@ namespace TrumpfMetamation_Task1
             Thread.Sleep(1000);
             SendKeys.SendWait("%{F4}");
 
-            
+            string filePath = @"D:\Trumpf Metamation\MetaMation.txt";
+            string expectedContent = "Welcome To Trumpf Metamation";
+
+            string actualContent = File.ReadAllText(filePath);
+            if (actualContent == expectedContent)
+            {
+                Console.WriteLine("Validation successful: The text content is correct.");
+            }
+            else
+
+            {
+                Console.WriteLine("Validation failed: The text content is incorrect.");
+            }
 
         }
     }
