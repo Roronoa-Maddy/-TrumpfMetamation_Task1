@@ -41,10 +41,10 @@ namespace TrumpfMetamation_Task1
             Thread.Sleep(1000);
             SendKeys.SendWait("{ENTER}");
             SendKeys.SendWait("{ENTER}");
-            Thread.Sleep(3000);
+            Thread.Sleep(4000);
 
             //Entering  text in the text file saving The File
-            SendKeys.SendWait("Welcome To Trumpf Metamation");
+            SendKeys.SendWait("Welcome To Trumpf Metamation!");
             Thread.Sleep(1000);
             SendKeys.SendWait("^s");
 
@@ -52,7 +52,7 @@ namespace TrumpfMetamation_Task1
             SendKeys.SendWait("%{F4}");
 
             string filePath = @"C:\Trumpf Metamation\MetaMation.txt";
-            string expectedContent = "Welcome To Trumpf Metamation";
+            string expectedContent = "Welcome To Trumpf Metamation!";
 
             string actualContent = File.ReadAllText(filePath);
             if (actualContent == expectedContent)
