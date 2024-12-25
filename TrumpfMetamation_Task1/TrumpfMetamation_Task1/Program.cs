@@ -14,23 +14,7 @@ namespace TrumpfMetamation_Task1
             // see https://aka.ms/applicationconfiguration.
             //ApplicationConfiguration.Initialize();
             //Application.Run(new Form1());
-
-            string folderPath = @"D:\TrumpfMetamation";
-
-            if (!System.IO.Directory.Exists(folderPath))
-            {
-                // Open File Explorer to the specified drive
-                System.Diagnostics.Process.Start("explorer.exe", @"D:\");
-                System.Threading.Thread.Sleep(10000); // Wait for File Explorer to open
-              
-
-                
-            }
-            else
-            {
-                Console.WriteLine("Folder already exists.");
-            }
-            Thread.Sleep(TimeSpan.FromSeconds(10));
+            System.Diagnostics.Process.Start("explorer.exe", @"C:");
         }
     }
 }
