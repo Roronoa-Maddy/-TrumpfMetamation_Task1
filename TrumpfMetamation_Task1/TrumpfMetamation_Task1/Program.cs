@@ -72,6 +72,11 @@ namespace TrumpfMetamation_Task1
             Thread.Sleep(500);
             SendKeys.SendWait("{ENTER}");
 
+            if (!File.Exists(filePath))
+            {
+                Console.WriteLine("File got deleted");
+            }
+
         }
     }
 }
