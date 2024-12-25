@@ -25,6 +25,23 @@ namespace TrumpfMetamation_Task1
             SendKeys.SendWait("Trumpf Metamation");
             SendKeys.SendWait("{ENTER}");
             SendKeys.SendWait("{ENTER}");
+            Thread.Sleep(5000);
+
+            //Creating New Text File
+            SendKeys.SendWait("{F10}");
+            SendKeys.SendWait("{ENTER}");
+            Thread.Sleep(2000);
+            for (int i = 0; i < 8; i++)
+            {
+                SendKeys.SendWait("{DOWN}");
+            }
+            SendKeys.SendWait("{ENTER}");
+            Thread.Sleep(1000);
+            SendKeys.SendWait("MetaMation");
+            Thread.Sleep(1000);
+            SendKeys.SendWait("{ENTER}");
+            SendKeys.SendWait("{ENTER}");
+            Thread.Sleep(3000);
         }
     }
 }
