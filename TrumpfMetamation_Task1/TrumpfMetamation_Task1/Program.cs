@@ -42,6 +42,17 @@ namespace TrumpfMetamation_Task1
             SendKeys.SendWait("{ENTER}");
             SendKeys.SendWait("{ENTER}");
             Thread.Sleep(3000);
+
+            //Entering  text in the text file saving The File
+            SendKeys.SendWait("Welcome To Trumpf Metamation");
+            Thread.Sleep(1000); 
+            SendKeys.SendWait("^s"); 
+                                     
+            Thread.Sleep(1000);
+            SendKeys.SendWait("%{F4}");
+
+            
+
         }
     }
 }
