@@ -77,6 +77,21 @@ namespace TrumpfMetamation_Task1
                 Console.WriteLine("File got deleted");
             }
 
+            SendKeys.SendWait("{BACKSPACE}");
+            Thread.Sleep(1000);
+            SendKeys.SendWait("Trumpf Metamation");
+            SendKeys.SendWait("+{F10}");
+            Thread.Sleep(1000);
+            SendKeys.SendWait("D");
+            Thread.Sleep(500);
+            SendKeys.SendWait("{ENTER}");
+            String Folderpath = "C:\\Trumpf Metamation";
+            if (!Directory.Exists(Folderpath))
+            {
+                Console.WriteLine("Folder Got Deleted");
+            }
+
+
         }
     }
 }
