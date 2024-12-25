@@ -1,4 +1,4 @@
-**Project Overview
+**Project Overview**
 # File Handling Automation Task (C# Implementation)
 
 This project automates a sequence of file handling tasks using C# and Visual Studio. The tasks include folder creation, file manipulation, content verification, and cleanup.
