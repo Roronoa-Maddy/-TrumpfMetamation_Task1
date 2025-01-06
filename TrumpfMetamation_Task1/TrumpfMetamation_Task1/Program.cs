@@ -1,4 +1,13 @@
+using FlaUI.Core.AutomationElements;
+using FlaUI.Core.Definitions;
+using FlaUI.Core.Input;
+using FlaUI.Core.Tools;
+using FlaUI.Core.WindowsAPI;
+using FlaUI.UIA3;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Diagnostics;
+//using System.Windows.Automation;
+using System.Windows.Documents;
 
 namespace TrumpfMetamation_Task1
 {
@@ -10,88 +19,102 @@ namespace TrumpfMetamation_Task1
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            //ApplicationConfiguration.Initialize();
-            //Application.Run(new Form1());
-            System.Diagnostics.Process.Start("explorer.exe", @"C:");
 
-            System.Threading.Thread.Sleep(5000); // Wait for File Explorer to open
+            var fileExplorerApp = FlaUI.Core.Application.Launch("explorer.exe", @"C:");
+            //System.Diagnostics.Process.Start("explorer.exe", @"C:");
 
 
-            SendKeys.SendWait("^+n");
-            Thread.Sleep(500);
-            // Type the new folder name and press Enter
-            SendKeys.SendWait("Trumpf Metamation");
-            SendKeys.SendWait("{ENTER}");
-            SendKeys.SendWait("{ENTER}");
-            Thread.Sleep(5000);
-
-            //Creating New Text File
-            SendKeys.SendWait("{F10}");
-            SendKeys.SendWait("{ENTER}");
-            Thread.Sleep(2000);
-            for (int i = 0; i < 8; i++)
+            using (var automation = new UIA3Automation())
             {
-                SendKeys.SendWait("{DOWN}");
+
+                var rootElement = automation.GetDesktop();
+                var condition = automation.ConditionFactory.ByControlType(FlaUI.Core.Definitions.ControlType.Window).And(automation.ConditionFactory.ByName("OSDisk (C:) - File Explorer"));
+                var MainWindow = Retry.WhileNull(() => rootElement.FindFirst((FlaUI.Core.Definitions.TreeScope)TreeScope.Children, condition), timeout: TimeSpan.FromSeconds(10)).Result;
+                Thread.Sleep(TimeSpan.FromSeconds(2));
+                var newbutton = MainWindow.FindFirstDescendant(cf => cf.ByName("New")).AsButton();
+                newbutton.Click();
+                Thread.Sleep(TimeSpan.FromMilliseconds(25));
+                var folderbutton = MainWindow.FindFirstDescendant(cf => cf.ByName("Folder")).AsButton();
+                folderbutton.Click();
+
+                Thread.Sleep(TimeSpan.FromMilliseconds(25));
+                Keyboard.Release(VirtualKeyShort.BACK);
+                Thread.Sleep(TimeSpan.FromMilliseconds(25));
+                Keyboard.Type("Trumpf Metamation");
+                Keyboard.Type(VirtualKeyShort.ENTER);
+                Thread.Sleep(TimeSpan.FromMilliseconds(250));
+                Keyboard.Type(VirtualKeyShort.ENTER);
+                Thread.Sleep(TimeSpan.FromSeconds(2));
+                Thread.Sleep(TimeSpan.FromMilliseconds(500));
+                newbutton.Click();
+                Thread.Sleep(TimeSpan.FromSeconds(5));
+
+
+                for (int i = 0; i < 8; i++)
+                {
+                    Keyboard.Type(VirtualKeyShort.DOWN);
+                }
+                Thread.Sleep(TimeSpan.FromSeconds(2));
+                Keyboard.Type(VirtualKeyShort.ENTER);
+                Thread.Sleep(TimeSpan.FromMilliseconds(25));
+                Keyboard.Release(VirtualKeyShort.BACK);
+                Keyboard.Type("MetaMation");
+                Keyboard.Type(VirtualKeyShort.ENTER);
+                // Wait for File Explorer to open
+                Thread.Sleep(TimeSpan.FromMilliseconds(500));
+                
+                Keyboard.Type(VirtualKeyShort.ENTER);
+                Thread.Sleep(TimeSpan.FromSeconds(1));
+                SendKeys.SendWait("Welcome To Trumpf Metamation!");
+                Thread.Sleep(TimeSpan.FromSeconds(5));
+                Thread.Sleep(1000);
+                SendKeys.SendWait("^s");
+
+                Thread.Sleep(1000);
+                SendKeys.SendWait("%{F4}");
+
+                string filePath = @"C:\Trumpf Metamation\MetaMation.txt";
+                string expectedContent = "Welcome To Trumpf Metamation!";
+
+                string actualContent = File.ReadAllText(filePath);
+                if (actualContent == expectedContent)
+                {
+                    Console.WriteLine("Validation successful: The text content is correct.");
+                }
+                else
+
+                {
+                    Console.WriteLine("Validation failed: The text content is incorrect.");
+                }
+
+                //Deleting the Respective File
+                SendKeys.SendWait("+{F10}");
+                Thread.Sleep(1000);
+                SendKeys.SendWait("D");
+                Thread.Sleep(500);
+                SendKeys.SendWait("{ENTER}");
+
+                if (!File.Exists(filePath))
+                {
+                    Console.WriteLine("File got deleted");
+                }
+
+                SendKeys.SendWait("{BACKSPACE}");
+                Thread.Sleep(1000);
+                SendKeys.SendWait("Trumpf Metamation");
+                SendKeys.SendWait("+{F10}");
+                Thread.Sleep(1000);
+                SendKeys.SendWait("D");
+                Thread.Sleep(500);
+                SendKeys.SendWait("{ENTER}");
+                String Folderpath = "C:\\Trumpf Metamation";
+                
+
+                Assert.IsFalse(Directory.Exists(Folderpath), "The folder was not deleted.");
+
+
+
             }
-            SendKeys.SendWait("{ENTER}");
-            Thread.Sleep(1000);
-            SendKeys.SendWait("MetaMation");
-            Thread.Sleep(1000);
-            SendKeys.SendWait("{ENTER}");
-            SendKeys.SendWait("{ENTER}");
-            Thread.Sleep(4000);
-
-            //Entering  text in the text file saving The File
-            SendKeys.SendWait("Welcome To Trumpf Metamation!");
-            Thread.Sleep(1000);
-            SendKeys.SendWait("^s");
-
-            Thread.Sleep(1000);
-            SendKeys.SendWait("%{F4}");
-
-            string filePath = @"C:\Trumpf Metamation\MetaMation.txt";
-            string expectedContent = "Welcome To Trumpf Metamation!";
-
-            string actualContent = File.ReadAllText(filePath);
-            if (actualContent == expectedContent)
-            {
-                Console.WriteLine("Validation successful: The text content is correct.");
-            }
-            else
-
-            {
-                Console.WriteLine("Validation failed: The text content is incorrect.");
-            }
-
-            //Deleting the Respective File
-            SendKeys.SendWait("+{F10}");
-            Thread.Sleep(1000);
-            SendKeys.SendWait("D");
-            Thread.Sleep(500);
-            SendKeys.SendWait("{ENTER}");
-
-            if (!File.Exists(filePath))
-            {
-                Console.WriteLine("File got deleted");
-            }
-
-            SendKeys.SendWait("{BACKSPACE}");
-            Thread.Sleep(1000);
-            SendKeys.SendWait("Trumpf Metamation");
-            SendKeys.SendWait("+{F10}");
-            Thread.Sleep(1000);
-            SendKeys.SendWait("D");
-            Thread.Sleep(500);
-            SendKeys.SendWait("{ENTER}");
-            String Folderpath = "C:\\Trumpf Metamation";
-            if (!Directory.Exists(Folderpath))
-            {
-                Console.WriteLine("Folder Got Deleted");
-            }
-
-
         }
     }
 }

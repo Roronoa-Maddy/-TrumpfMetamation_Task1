@@ -7,8 +7,8 @@
       "RelativeMoniker": "D:0:0:{4BC114E2-AD46-4C3F-9705-CBF329F8DB91}|TrumpfMetamation_Task1\\TrumpfMetamation_Task1.csproj|solutionrelative:trumpfmetamation_task1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4BC114E2-AD46-4C3F-9705-CBF329F8DB91}|TrumpfMetamation_Task1\\TrumpfMetamation_Task1.csproj|D:\\P\\Git_Hub\\Roronoa-Maddy\\-TrumpfMetamation_Task1\\TrumpfMetamation_Task1\\trumpfmetamation_task1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4BC114E2-AD46-4C3F-9705-CBF329F8DB91}|TrumpfMetamation_Task1\\TrumpfMetamation_Task1.csproj|solutionrelative:trumpfmetamation_task1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{4BC114E2-AD46-4C3F-9705-CBF329F8DB91}|TrumpfMetamation_Task1\\TrumpfMetamation_Task1.csproj|d:\\p\\git_hub\\roronoa-maddy\\-trumpfmetamation_task1\\trumpfmetamation_task1\\trumpfmetamation_task1\\trumpfmetamation_task1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4BC114E2-AD46-4C3F-9705-CBF329F8DB91}|TrumpfMetamation_Task1\\TrumpfMetamation_Task1.csproj|solutionrelative:trumpfmetamation_task1\\trumpfmetamation_task1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,19 +18,23 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TrumpfMetamation_Task1.csproj",
+              "DocumentMoniker": "D:\\P\\Git_Hub\\Roronoa-Maddy\\-TrumpfMetamation_Task1\\TrumpfMetamation_Task1\\TrumpfMetamation_Task1\\TrumpfMetamation_Task1.csproj",
+              "RelativeDocumentMoniker": "TrumpfMetamation_Task1\\TrumpfMetamation_Task1.csproj",
+              "ToolTip": "D:\\P\\Git_Hub\\Roronoa-Maddy\\-TrumpfMetamation_Task1\\TrumpfMetamation_Task1\\TrumpfMetamation_Task1\\TrumpfMetamation_Task1.csproj",
+              "RelativeToolTip": "TrumpfMetamation_Task1\\TrumpfMetamation_Task1.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-01-04T18:20:04.273Z"
             },
             {
               "$type": "Document",
@@ -40,21 +44,14 @@
               "RelativeDocumentMoniker": "TrumpfMetamation_Task1\\Program.cs",
               "ToolTip": "D:\\P\\Git_Hub\\Roronoa-Maddy\\-TrumpfMetamation_Task1\\TrumpfMetamation_Task1\\TrumpfMetamation_Task1\\Program.cs",
               "RelativeToolTip": "TrumpfMetamation_Task1\\Program.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAqwBAAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAQwG8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-20T01:41:30.983Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "D:\\P\\Git_Hub\\Roronoa-Maddy\\-TrumpfMetamation_Task1\\TrumpfMetamation_Task1\\TrumpfMetamation_Task1\\Form1.cs",
-              "RelativeDocumentMoniker": "TrumpfMetamation_Task1\\Form1.cs",
-              "ToolTip": "D:\\P\\Git_Hub\\-TrumpfMetamation_Task1\\TrumpfMetamation_Task1\\TrumpfMetamation_Task1\\Form1.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\-TrumpfMetamation_Task1\\TrumpfMetamation_Task1\\TrumpfMetamation_Task1\\Form1.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T01:41:08.27Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             }
           ]
         }

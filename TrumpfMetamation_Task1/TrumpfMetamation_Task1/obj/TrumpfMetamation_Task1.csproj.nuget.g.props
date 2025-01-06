@@ -13,4 +13,8 @@
     <SourceRoot Include="C:\Users\v-madhavans\.nuget\packages\" />
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgMSTest_Analyzers Condition=" '$(PkgMSTest_Analyzers)' == '' ">C:\Users\v-madhavans\.nuget\packages\mstest.analyzers\3.7.0</PkgMSTest_Analyzers>
+    <PkgInterop_UIAutomationClient Condition=" '$(PkgInterop_UIAutomationClient)' == '' ">C:\Users\v-madhavans\.nuget\packages\interop.uiautomationclient\10.19041.0</PkgInterop_UIAutomationClient>
+  </PropertyGroup>
 </Project>
